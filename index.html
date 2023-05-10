@@ -4,6 +4,16 @@
 </head>
 
 <style>
+  @keyframes fanning-gradient {
+    0% {
+      background-position: top right;
+    }
+    
+    100% {
+      background-position: bottom left;
+    }
+  }
+  
   body{
     margin: 0;
     padding: 0;
@@ -16,15 +26,17 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-image: repeating-conic-gradient(from 0deg, 
-      #008b8b 0%, #228b22 10%, #90ee90 20%, 
-      #adff2f 30%, #8fbc8b 40%), 
+    background-image:  
       repeating-conic-gradient(from 0deg, 
-      #deb887 0%, #ffe4c4 10%, #bc8f8f 20%, #f4a460 30%, #ffebcd 40%);
+      #deb887 0%, #ffe4c4 10%, #bc8f8f 20%, #f4a460 30%, #ffebcd 40%), 
+      repeating-conic-gradient(from 0deg, 
+      #008b8b 0%, #90ee90 10%, 
+      #adff2f 20%, #8fbc8b 30%);
     background-size: 200% 200%;
-    background-position: center;
-    background-blend-mode: soft-light;
+    background-position: top right;
+    background-blend-mode: multiply;
     position: absolute;
+    animation: fanning-gradient 15s ease-in-out alternate infinite;
   }
 
 </style>
